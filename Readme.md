@@ -38,33 +38,16 @@ For queries or issues please contact : mzanwar@envs.au.dk
     `-- ParsingSword.R
 ```
 
-1. Download the latest distribution and expand it using unzip
-
-	OR 
-
-2. Download the development version:
+1. Download the development version:
 
 ```bash
-git clone https://github.com/anwarMZ/CoMW.git
+git clone https://github.com/currocam/CoMW
 ```
 
-Create an environment using anaconda, If you do not have anaconda installed, use [Anaconda installer link](https://docs.anaconda.com/anaconda/install/linux/)
-
-```bash
-cd CoMW
-conda env create -f ./CoMW.yml
-source activate CoMW
-```
 Run install.sh file to download databases to be used in CoMW in databases directory
 ```bash
 bash ./install.sh
 ```
-
-Now run python scripts e.g.
-```bash
-python scripts/assemble_reads.py -h 
-```
-
 
 ## Scripts
 
