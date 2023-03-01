@@ -113,13 +113,13 @@ if __name__ == "__main__":
 	files.remove(transout+".flat")
 	t = int(args.threads)
 	db=int(args.database)
-	if db is 1:
+	if db == 1:
 		database=dbdir+"/M5NR_protien.fasta"
 		batchsword(fastalist = files, Subjectdatabase =  database, threads = t)	
-	elif db is 2:
+	elif db == 2:
 		database=dbdir+"/CAZyDB.07202017.fa"
 		batchsword(fastalist = files, Subjectdatabase =  database, threads = t)
-	elif db is 3:
+	elif db == 3:
 		database=dbdir+"/NCyc_100.faa"
 		batchsword(fastalist = files, Subjectdatabase =  database, threads = t)
 	else:
@@ -128,5 +128,5 @@ if __name__ == "__main__":
 	for f in files:
 		os.system("cat "+outputdir+"/TempFiles/"+f.replace(".fasta",".result.tsv")+" >> " + outputdir+"/"+outputfile)
 	agree= args.remove
-	if agree is 'y':
+	if agree == 'y':
 		shutil.rmtree(outputdir+"/TempFiles/")

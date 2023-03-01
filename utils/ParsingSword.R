@@ -13,3 +13,5 @@ Sword5 = Sword[Sword$e.value<=e,]
 Swordsorted = Sword5[order(Sword5[,'e.value'],-Sword5[,'score']),]
 Swordbest = Swordsorted[!duplicated(substr(Swordsorted[,1],1,nchar(as.character(Swordsorted[,1]))-2)),]
 write.table(Swordbest,args[3],sep="\t",quote=F,row.names=F)
+#TEST_LINE_BELOW
+#write.table(Swordsorted,args[3],sep="\t",quote=F,row.names=F)

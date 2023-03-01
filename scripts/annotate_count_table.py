@@ -162,11 +162,13 @@ def annotate_eggNOG(tabfile, outfile):
 					x=infile[i][infile[i].index("\t"):infile[i].index("LevelII__")]+"LevelII__"+inheritence[j]+infile[i][infile[i].index("; LevelIII__"):]
 					out.write(ID+x+"\n")
 			if ".." in infile[i][infile[i].index("LevelII__") : infile[i].index("; LevelIII__")] and ".." in infile[i][infile[i].index("LevelI__") : infile[i].index("; LevelII__")]:
-				taxonomyII = infile[i][infile[i].index("LevelII__") +3 : infile[i].index("; LevelIII__")]
+				taxonomyII = infile[i][infile[i].index("LevelII__") +9 : infile[i].index("; LevelIII__")]
 				inheritenceII=taxonomyII.split("..")
+				# print(inheritenceII)
 				for l in range(0,len(inheritenceII)):
 					list_values = [key for key,val in levelII.items() if val==inheritenceII[l]]
 					ID=infile[i][:infile[i].index("\t")]+"_"+str(l+1)
+					print(ID)
 					x=infile[i][infile[i].index("\t"):infile[i].index("LevelI__")]+"LevelI__"+levelI[list_values[0]]+infile[i][infile[i].index("; LevelII__"):]
 					x=x.replace(x[x.index("LevelII__"):x.index("LevelIII__")],"LevelII__"+inheritenceII[l]+"; ")
 					out.write(ID+x+"\n")
