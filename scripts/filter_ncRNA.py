@@ -54,7 +54,7 @@ if args.remove not in ['y','n']:sys.exit(1)
 
 def multi2linefasta(fastafile):
 	mfasta = fastafile.replace(tail,"_formatted"+tail)
-	ifile = open(fastafile,'rU')
+	ifile = open(fastafile,'r')
 	with open(mfasta, 'w') as ofile:
 		for record in SeqIO.parse(ifile, "fasta"):
 			sequence = str(record.seq)
@@ -108,5 +108,5 @@ if __name__ == "__main__":
 	filter_fasta(fastafile_formatted = fastadir+"/"+fastaf.replace(tail,"_formatted"+tail), idfile = outputdir +"/"+fastaf.replace(".fasta","_cmsearchncRNA.txt"))
 	print("FASTA file filtered\n")
 	agree= args.remove
-	if agree is 'y':
+	if agree == 'y':
 		shutil.rmtree(fastadir+"/TempFiles/")
